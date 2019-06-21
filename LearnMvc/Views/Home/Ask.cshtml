@@ -1,0 +1,51 @@
+﻿@model LearnMvc.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/StyleSheet1.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+    <title>Ask</title>
+</head>
+<body>
+<div class="panel panel-success">
+    <div class="panel-heading text-center"><h4>RSVP</h4></div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>Your Name:</label> 
+                @Html.TextBoxFor(x => x.Name,new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                <label>Your Email:</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Your Phone: </label>
+                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Will Atend?:</label>
+                @Html.DropDownListFor(x => x.WillAtend, new[]
+                {
+                    new SelectListItem {Text = "Yes", Value = bool.TrueString},
+                    new SelectListItem {Text = "No", Value = bool.FalseString},
+                }, "请选择", new { @class = "form-control" })
+            </div>
+            <div  class="text-center">
+                <input type="submit" value="提交" class="btn btn-success"/>
+            </div>
+             }
+            </div>
+        </div>
+</body>
+</html>

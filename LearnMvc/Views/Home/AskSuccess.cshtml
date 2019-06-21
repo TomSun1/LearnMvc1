@@ -1,0 +1,39 @@
+﻿@model LearnMvc.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AskSuccess</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+    <style>
+        body{ background-color: #f1f1f1;}
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        @{
+            if (@Model.WillAtend == true)
+            {
+                <h1>
+                    感谢您的到来!
+                </h1>
+            }
+            else
+            {
+                <h1>
+                    非常遗憾!
+                </h1>
+            }
+            @Model.Name
+            }
+
+            </div>
+</body>
+</html>
